@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual POO y Programación Estructurada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Manual de Programación Orientada a Objetos y Programación Estructurada</h1>
+    <div class="tabs">
+        <button class="tab-button" onclick="openTab('poo')">Programación Orientada a Objetos</button>
+        <button class="tab-button" onclick="openTab('notebook')">Ejemplos Notebook</button>
+    </div>
+    <div id="poo" class="tab-content">
+        <h2>Programación Orientada a Objetos</h2>
+        <p>Se explica el paradigma de programación orientada a objetos (POO), sus principios fundamentales, componentes clave, ventajas y ejemplos prácticos.</p>
+        <pre><code>
+- Abstracción: modelar lo esencial.
+- Encapsulamiento: proteger y ocultar datos.
+- Herencia: reutilización de código en jerarquías.
+- Polimorfismo: comportamientos múltiples según contexto.
+        </code></pre>
+    </div>
+    <div id="notebook" class="tab-content" style="display:none;">
+        <h2>Ejemplos de la Notebook</h2>
+<div class='md-text'><h3>Explicación 1</h3><p>Programación estructurada
+
+Se requiere calcular el valor a pagar de una comprsa dónde se conoce el `valor unitario del porducto` y la  `cantidad a llevar`.</p></div>
+<div class='code-block'><h3>Código 2</h3><pre><code># Precios
+naranaja = 300
+manzana = 2200
+durazno = 3000
+
+# 'Pedro lleva dos naranjas'
+valor_unitario = naranaja
+cantidad = 2
+valor_total = valor_unitario * cantidad
+print('Pedro debe pagar por '+str(cantidad)+' naranjas, un total de '+str(valor_total))
+
+# 'María lleva tres naranjas'
+valor_unitario = naranaja
+cantidad = 3
+valor_total = valor_unitario * cantidad
+print('María debe pagar por '+str(cantidad)+' naranjas, un total de '+str(valor_total))
+
+# 'Diana lleva cuatro naranjas'
+valor_unitario = naranaja
+cantidad = 4
+valor_total = valor_unitario * cantidad
+print('Diana debe pagar por '+str(cantidad)+' naranjas, un total de '+str(valor_total))</code></pre></div>
+<div class='md-text'><h3>Explicación 3</h3><p># Reto 1
+
+Reto: ¿Qué, si se requiere cambiar el mensaje de salida, proponga la solución de acuerdo a lo socializado en clase?.</p></div>
+<div class='code-block'><h3>Código 4</h3><pre><code># Precios
+naranaja = 300
+manzana = 2200
+durazno = 3000
+
+#def calcular_valor_a_pagar()
+
+def imprmir_factura(persona,fruta, valor_unitario, cantidad,valor_total):
+  #print(f'{persona} debe pagar por {str(cantidad)} {fruta} un total de {str(valor_total)}')
+  print(f'Factura de compra: {persona} \n Dato de la compra: {str(cantidad)} {fruta} \n Valor facturado:  {str(valor_total)} \n')
+
+
+# 'Pedro lleva dos naranjas'
+cantidad = 2
+valor_total = valor_unitario * cantidad
+imprmir_factura('Pedro', 'naranaja', naranaja, cantidad, valor_total)
+
+# 'María lleva tres naranjas'
+cantidad = 3
+valor_total = valor_unitario * cantidad
+imprmir_factura('María', 'naranaja', naranaja, cantidad, valor_total)
+
+# 'Diana lleva cuatro naranjas'
+cantidad = 4
+valor_total = valor_unitario * cantidad
+imprmir_factura('Diana', 'naranaja', naranaja, cantidad, valor_total)</code></pre></div>
+<div class='md-text'><h3>Explicación 5</h3><p># Reto 2
+
+Contruir una función que identifique el valor unitario y producto; este puedaregresar el dato de valor a pagar</p></div>
+<div class='code-block'><h3>Código 6</h3><pre><code># Precios
+naranaja = 300
+manzana = 2200
+durazno = 3000
+
+def calcular_valor_a_pagar(valor_unitario, cantidad):
+  valor_total = valor_unitario * cantidad
+  return valor_total
+
+def imprmir_factura(persona,fruta, valor_unitario, cantidad):
+  valor_total = calcular_valor_a_pagar(valor_unitario, cantidad)
+
+  #print(f'{persona} debe pagar por {str(cantidad)} {fruta} un total de {str(valor_total)}')
+  print(f'Factura de compra: {persona} \n Dato de la compra: {str(cantidad)} {fruta} \n Valor facturado:  {str(valor_total)} \n')
+
+
+# 'Pedro lleva dos naranjas'
+imprmir_factura('Pedro', 'naranaja', naranaja, 2)
+
+# 'María lleva tres naranjas'
+imprmir_factura('María', 'naranaja', naranaja, 3)
+
+# 'Diana lleva cuatro naranjas'
+imprmir_factura('Diana', 'naranaja', naranaja, 4)</code></pre></div>
+<div class='md-text'><h3>Explicación 7</h3><p># Reto 3:
+Plan de descuento. De acuerdo a la fruta se hace un descuento.
+
+1. naranaja = 3%
+2. manzana = 9%
+3. durazno = %12</p></div>
+<div class='code-block'><h3>Código 8</h3><pre><code># Precios
+naranaja = 1000
+manzana = 2200
+durazno = 3000
+
+def calcular_valor_a_pagar(valor_unitario, cantidad):
+  valor_total = valor_unitario * cantidad
+  return valor_total
+
+def calcular_valor_descuento(fruta, valor_total):
+  if fruta == 'naranaja':
+    descuento = valor_total * 0.03
+  elif fruta == 'manzana':
+    descuento = valor_total * 0.09
+  elif fruta == 'durazno':
+    descuento = valor_total * 0.12
+  return descuento
+
+def imprmir_factura(persona,fruta, valor_unitario, cantidad):
+  valor_total = calcular_valor_a_pagar(valor_unitario, cantidad)
+  descuento = calcular_valor_descuento(fruta, valor_total)
+  valor_neto = valor_total - descuento
+
+  #print(f'{persona} debe pagar por {str(cantidad)} {fruta} un total de {str(valor_total)}')
+  print(f'Factura de compra: {persona} \n Dato de la compra: {str(cantidad)} {fruta} \n Valor facturado: Valor bruto {str(valor_total)} - Valor descuento {str(descuento)} - Valor neto {str(valor_neto)}\n')
+
+
+# 'Pedro lleva una naranjas'
+imprmir_factura('Pedro', 'naranaja', naranaja, 1)
+
+# 'María lleva tres naranjas'
+imprmir_factura('María', 'naranaja', naranaja, 3)
+
+# 'Diana lleva cuatro naranjas'
+imprmir_factura('Diana', 'naranaja', naranaja, 4)</code></pre></div>
+
+    </div>
+    <script>
+        function openTab(tabId) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabId).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
