@@ -1,8 +1,9 @@
 # username,
 # password,
 # person: Person
+from .person import Person
 class User:
-    def __init__(self, username, password, person):
+    def __init__(self, username, password, person: Person):
         self.username = username
         self.password = password
         self.person = person
